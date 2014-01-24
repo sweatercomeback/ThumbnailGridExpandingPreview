@@ -387,8 +387,13 @@ var Grid = (function() {
 
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
-			this.$href.attr( 'href', eldata.href );
-
+            if(eldata.href === "#")
+            {
+			    this.$href.hide();
+            } else {
+                this.$href.attr( 'href', eldata.href );
+                this.$href.show();
+            }
 			var self = this;
 			
 			// remove the current image in the preview
